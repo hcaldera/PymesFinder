@@ -1,0 +1,51 @@
+﻿@model piti2013.Models.Pagos
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Pagos</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.serviciosID, "Servicios")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("serviciosID", String.Empty)
+            @Html.ValidationMessageFor(model => model.serviciosID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.fechapago)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.fechapago)
+            @Html.ValidationMessageFor(model => model.fechapago)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.montopago)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.montopago)
+            @Html.ValidationMessageFor(model => model.montopago)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

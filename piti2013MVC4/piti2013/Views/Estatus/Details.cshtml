@@ -1,0 +1,36 @@
+﻿@model piti2013.Models.Estatus
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Estatus</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.descripcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.descripcion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fechaagregado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaagregado)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fechamodificado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechamodificado)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.estatusID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

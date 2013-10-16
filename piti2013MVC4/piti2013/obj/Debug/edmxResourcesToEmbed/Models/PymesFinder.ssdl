@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PymesFinderModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="PymesFinderModelStoreContainer">
+    <EntitySet Name="Estatus" EntityType="PymesFinderModel.Store.Estatus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Pagos" EntityType="PymesFinderModel.Store.Pagos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Publicidad" EntityType="PymesFinderModel.Store.Publicidad" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Pymes" EntityType="PymesFinderModel.Store.Pymes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Servicios" EntityType="PymesFinderModel.Store.Servicios" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Subdominios" EntityType="PymesFinderModel.Store.Subdominios" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipoPublicidad" EntityType="PymesFinderModel.Store.TipoPublicidad" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipoServicio" EntityType="PymesFinderModel.Store.TipoServicio" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TipoUsuario" EntityType="PymesFinderModel.Store.TipoUsuario" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Usuario" EntityType="PymesFinderModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK__Pagos__servicios__300424B4" Association="PymesFinderModel.Store.FK__Pagos__servicios__300424B4">
+      <End Role="Servicios" EntitySet="Servicios" />
+      <End Role="Pagos" EntitySet="Pagos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Publicida__pymes__3E52440B" Association="PymesFinderModel.Store.FK__Publicida__pymes__3E52440B">
+      <End Role="Pymes" EntitySet="Pymes" />
+      <End Role="Publicidad" EntitySet="Publicidad" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Publicida__tipop__3F466844" Association="PymesFinderModel.Store.FK__Publicida__tipop__3F466844">
+      <End Role="TipoPublicidad" EntitySet="TipoPublicidad" />
+      <End Role="Publicidad" EntitySet="Publicidad" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pymes__usuarioID__21B6055D" Association="PymesFinderModel.Store.FK__Pymes__usuarioID__21B6055D">
+      <End Role="Usuario" EntitySet="Usuario" />
+      <End Role="Pymes" EntitySet="Pymes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Servicios__estat__29572725" Association="PymesFinderModel.Store.FK__Servicios__estat__29572725">
+      <End Role="Estatus" EntitySet="Estatus" />
+      <End Role="Servicios" EntitySet="Servicios" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Servicios__pymes__2A4B4B5E" Association="PymesFinderModel.Store.FK__Servicios__pymes__2A4B4B5E">
+      <End Role="Pymes" EntitySet="Pymes" />
+      <End Role="Servicios" EntitySet="Servicios" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Servicios__tipos__286302EC" Association="PymesFinderModel.Store.FK__Servicios__tipos__286302EC">
+      <End Role="TipoServicio" EntitySet="TipoServicio" />
+      <End Role="Servicios" EntitySet="Servicios" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Subdomini__estat__37A5467C" Association="PymesFinderModel.Store.FK__Subdomini__estat__37A5467C">
+      <End Role="Estatus" EntitySet="Estatus" />
+      <End Role="Subdominios" EntitySet="Subdominios" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Subdomini__pymes__36B12243" Association="PymesFinderModel.Store.FK__Subdomini__pymes__36B12243">
+      <End Role="Pymes" EntitySet="Pymes" />
+      <End Role="Subdominios" EntitySet="Subdominios" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Usuario__estatus__1B0907CE" Association="PymesFinderModel.Store.FK__Usuario__estatus__1B0907CE">
+      <End Role="Estatus" EntitySet="Estatus" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Usuario__tipousu__1A14E395" Association="PymesFinderModel.Store.FK__Usuario__tipousu__1A14E395">
+      <End Role="TipoUsuario" EntitySet="TipoUsuario" />
+      <End Role="Usuario" EntitySet="Usuario" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Estatus">
+    <Key>
+      <PropertyRef Name="estatusID" />
+    </Key>
+    <Property Name="estatusID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="char" Nullable="false" MaxLength="10" />
+    <Property Name="fechaagregado" Type="datetime" Nullable="false" />
+    <Property Name="fechamodificado" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pagos">
+    <Key>
+      <PropertyRef Name="pagosID" />
+    </Key>
+    <Property Name="pagosID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="serviciosID" Type="int" Nullable="false" />
+    <Property Name="fechapago" Type="datetime" Nullable="false" />
+    <Property Name="montopago" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Publicidad">
+    <Key>
+      <PropertyRef Name="publicidadID" />
+    </Key>
+    <Property Name="publicidadID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="tipopublicidadID" Type="int" Nullable="false" />
+    <Property Name="pymesID" Type="int" Nullable="false" />
+    <Property Name="codigopublicidad" Type="text" Nullable="false" />
+    <Property Name="nombrepublicidad" Type="char" Nullable="false" MaxLength="20" />
+    <Property Name="fechaagregado" Type="datetime" Nullable="false" />
+    <Property Name="fechamodificado" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Pymes">
+    <Key>
+      <PropertyRef Name="pymesID" />
+    </Key>
+    <Property Name="pymesID" Type="int" Nullable="false" />
+    <Property Name="nombre" Type="char" Nullable="false" MaxLength="100" />
+    <Property Name="usuarioID" Type="int" Nullable="false" />
+    <Property Name="calle" Type="char" Nullable="false" MaxLength="40" />
+    <Property Name="numero" Type="int" Nullable="false" />
+    <Property Name="telefono" Type="int" />
+    <Property Name="foto" Type="char" MaxLength="20" />
+    <Property Name="descripcion" Type="char" MaxLength="100" />
+    <Property Name="denominacion" Type="char" Nullable="false" MaxLength="20" />
+    <Property Name="posicionx" Type="float" Nullable="false" />
+    <Property Name="posiciony" Type="float" Nullable="false" />
+    <Property Name="fechaagregado" Type="datetime" Nullable="false" />
+    <Property Name="fechamodificado" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Servicios">
+    <Key>
+      <PropertyRef Name="serviciosID" />
+    </Key>
+    <Property Name="serviciosID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="tiposervicioID" Type="int" Nullable="false" />
+    <Property Name="pymesID" Type="int" Nullable="false" />
+    <Property Name="estatusID" Type="int" Nullable="false" />
+    <Property Name="fechaagregado" Type="datetime" Nullable="false" />
+    <Property Name="fechamodificado" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Subdominios">
+    <Key>
+      <PropertyRef Name="subdominiosID" />
+    </Key>
+    <Property Name="subdominiosID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="pymesID" Type="int" Nullable="false" />
+    <Property Name="estatusID" Type="int" Nullable="false" />
+    <Property Name="url" Type="char" Nullable="false" MaxLength="50" />
+    <Property Name="fechaagregado" Type="datetime" Nullable="false" />
+    <Property Name="fechamodificado" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoPublicidad">
+    <Key>
+      <PropertyRef Name="tipopublicidadID" />
+    </Key>
+    <Property Name="tipopublicidadID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="char" Nullable="false" MaxLength="10" />
+    <Property Name="fechaagregado" Type="datetime" Nullable="false" />
+    <Property Name="fechamodificado" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoServicio">
+    <Key>
+      <PropertyRef Name="tiposervicioID" />
+    </Key>
+    <Property Name="tiposervicioID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="char" Nullable="false" MaxLength="10" />
+    <Property Name="fechaagregado" Type="datetime" Nullable="false" />
+    <Property Name="fechamodificado" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoUsuario">
+    <Key>
+      <PropertyRef Name="tipousuarioID" />
+    </Key>
+    <Property Name="tipousuarioID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="descripcion" Type="char" Nullable="false" MaxLength="10" />
+    <Property Name="fechaagregado" Type="datetime" Nullable="false" />
+    <Property Name="fechamodificado" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="usuarioID" />
+    </Key>
+    <Property Name="usuarioID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="nombre" Type="char" Nullable="false" MaxLength="30" />
+    <Property Name="apellidopaterno" Type="char" Nullable="false" MaxLength="30" />
+    <Property Name="apellidomaterno" Type="char" MaxLength="30" />
+    <Property Name="calle" Type="char" Nullable="false" MaxLength="30" />
+    <Property Name="numero" Type="int" Nullable="false" />
+    <Property Name="codigopostal" Type="bigint" />
+    <Property Name="telefono" Type="bigint" />
+    <Property Name="cuenta" Type="char" Nullable="false" MaxLength="20" />
+    <Property Name="contrasena" Type="char" Nullable="false" MaxLength="20" />
+    <Property Name="correo" Type="char" MaxLength="50" />
+    <Property Name="fechaagregado" Type="datetime" Nullable="false" />
+    <Property Name="fechamodificado" Type="datetime" Nullable="false" />
+    <Property Name="tipousuarioID" Type="int" Nullable="false" />
+    <Property Name="estatusID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Pagos__servicios__300424B4">
+    <End Role="Servicios" Type="PymesFinderModel.Store.Servicios" Multiplicity="1" />
+    <End Role="Pagos" Type="PymesFinderModel.Store.Pagos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Servicios">
+        <PropertyRef Name="serviciosID" />
+      </Principal>
+      <Dependent Role="Pagos">
+        <PropertyRef Name="serviciosID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Publicida__pymes__3E52440B">
+    <End Role="Pymes" Type="PymesFinderModel.Store.Pymes" Multiplicity="1" />
+    <End Role="Publicidad" Type="PymesFinderModel.Store.Publicidad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pymes">
+        <PropertyRef Name="pymesID" />
+      </Principal>
+      <Dependent Role="Publicidad">
+        <PropertyRef Name="pymesID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Publicida__tipop__3F466844">
+    <End Role="TipoPublicidad" Type="PymesFinderModel.Store.TipoPublicidad" Multiplicity="1" />
+    <End Role="Publicidad" Type="PymesFinderModel.Store.Publicidad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoPublicidad">
+        <PropertyRef Name="tipopublicidadID" />
+      </Principal>
+      <Dependent Role="Publicidad">
+        <PropertyRef Name="tipopublicidadID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pymes__usuarioID__21B6055D">
+    <End Role="Usuario" Type="PymesFinderModel.Store.Usuario" Multiplicity="1" />
+    <End Role="Pymes" Type="PymesFinderModel.Store.Pymes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Usuario">
+        <PropertyRef Name="usuarioID" />
+      </Principal>
+      <Dependent Role="Pymes">
+        <PropertyRef Name="usuarioID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Servicios__estat__29572725">
+    <End Role="Estatus" Type="PymesFinderModel.Store.Estatus" Multiplicity="1" />
+    <End Role="Servicios" Type="PymesFinderModel.Store.Servicios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estatus">
+        <PropertyRef Name="estatusID" />
+      </Principal>
+      <Dependent Role="Servicios">
+        <PropertyRef Name="estatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Servicios__pymes__2A4B4B5E">
+    <End Role="Pymes" Type="PymesFinderModel.Store.Pymes" Multiplicity="1" />
+    <End Role="Servicios" Type="PymesFinderModel.Store.Servicios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pymes">
+        <PropertyRef Name="pymesID" />
+      </Principal>
+      <Dependent Role="Servicios">
+        <PropertyRef Name="pymesID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Servicios__tipos__286302EC">
+    <End Role="TipoServicio" Type="PymesFinderModel.Store.TipoServicio" Multiplicity="1" />
+    <End Role="Servicios" Type="PymesFinderModel.Store.Servicios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoServicio">
+        <PropertyRef Name="tiposervicioID" />
+      </Principal>
+      <Dependent Role="Servicios">
+        <PropertyRef Name="tiposervicioID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Subdomini__estat__37A5467C">
+    <End Role="Estatus" Type="PymesFinderModel.Store.Estatus" Multiplicity="1" />
+    <End Role="Subdominios" Type="PymesFinderModel.Store.Subdominios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estatus">
+        <PropertyRef Name="estatusID" />
+      </Principal>
+      <Dependent Role="Subdominios">
+        <PropertyRef Name="estatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Subdomini__pymes__36B12243">
+    <End Role="Pymes" Type="PymesFinderModel.Store.Pymes" Multiplicity="1" />
+    <End Role="Subdominios" Type="PymesFinderModel.Store.Subdominios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pymes">
+        <PropertyRef Name="pymesID" />
+      </Principal>
+      <Dependent Role="Subdominios">
+        <PropertyRef Name="pymesID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Usuario__estatus__1B0907CE">
+    <End Role="Estatus" Type="PymesFinderModel.Store.Estatus" Multiplicity="1" />
+    <End Role="Usuario" Type="PymesFinderModel.Store.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estatus">
+        <PropertyRef Name="estatusID" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="estatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Usuario__tipousu__1A14E395">
+    <End Role="TipoUsuario" Type="PymesFinderModel.Store.TipoUsuario" Multiplicity="1" />
+    <End Role="Usuario" Type="PymesFinderModel.Store.Usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoUsuario">
+        <PropertyRef Name="tipousuarioID" />
+      </Principal>
+      <Dependent Role="Usuario">
+        <PropertyRef Name="tipousuarioID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

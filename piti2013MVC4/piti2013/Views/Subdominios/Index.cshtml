@@ -1,0 +1,57 @@
+﻿@model IEnumerable<piti2013.Models.Subdominios>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Pymes.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estatus.descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.url)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechaagregado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechamodificado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pymes.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estatus.descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.url)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaagregado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechamodificado)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.subdominiosID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.subdominiosID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.subdominiosID })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,50 @@
+﻿@model piti2013.Models.Servicios
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Servicios</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TipoServicio.descripcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TipoServicio.descripcion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Pymes.nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Pymes.nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Estatus.descripcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Estatus.descripcion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fechaagregado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaagregado)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fechamodificado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechamodificado)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.serviciosID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

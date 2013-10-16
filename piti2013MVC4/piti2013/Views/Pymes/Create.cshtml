@@ -1,0 +1,123 @@
+﻿@model piti2013.Models.Pymes
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Pymes</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.nombre)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.nombre)
+            @Html.ValidationMessageFor(model => model.nombre)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.usuarioID, "Usuario")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("usuarioID", String.Empty)
+            @Html.ValidationMessageFor(model => model.usuarioID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.calle)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.calle)
+            @Html.ValidationMessageFor(model => model.calle)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.numero)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.numero)
+            @Html.ValidationMessageFor(model => model.numero)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.telefono)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.telefono)
+            @Html.ValidationMessageFor(model => model.telefono)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.foto)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.foto)
+            @Html.ValidationMessageFor(model => model.foto)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.descripcion)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.descripcion)
+            @Html.ValidationMessageFor(model => model.descripcion)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.denominacion)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.denominacion)
+            @Html.ValidationMessageFor(model => model.denominacion)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.posicionx)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.posicionx)
+            @Html.ValidationMessageFor(model => model.posicionx)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.posiciony)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.posiciony)
+            @Html.ValidationMessageFor(model => model.posiciony)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.fechaagregado)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.fechaagregado)
+            @Html.ValidationMessageFor(model => model.fechaagregado)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.fechamodificado)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.fechamodificado)
+            @Html.ValidationMessageFor(model => model.fechamodificado)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

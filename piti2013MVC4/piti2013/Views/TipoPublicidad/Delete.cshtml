@@ -1,0 +1,39 @@
+﻿@model piti2013.Models.TipoPublicidad
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>TipoPublicidad</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.descripcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.descripcion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fechaagregado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaagregado)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fechamodificado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechamodificado)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -1,0 +1,102 @@
+﻿@model piti2013.Models.Pymes
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>Pymes</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Usuario.nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Usuario.nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.calle)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.calle)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.numero)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.numero)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.telefono)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.telefono)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.foto)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.foto)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.descripcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.descripcion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.denominacion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.denominacion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.posicionx)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.posicionx)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.posiciony)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.posiciony)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fechaagregado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaagregado)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fechamodificado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechamodificado)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

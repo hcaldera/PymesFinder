@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PymesFinderModelStoreContainer" CdmEntityContainer="PymesFinder">
+    <EntitySetMapping Name="Estatus">
+      <EntityTypeMapping TypeName="PymesFinderModel.Estatus">
+        <MappingFragment StoreEntitySet="Estatus">
+          <ScalarProperty Name="estatusID" ColumnName="estatusID" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="fechaagregado" ColumnName="fechaagregado" />
+          <ScalarProperty Name="fechamodificado" ColumnName="fechamodificado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pagos">
+      <EntityTypeMapping TypeName="PymesFinderModel.Pagos">
+        <MappingFragment StoreEntitySet="Pagos">
+          <ScalarProperty Name="pagosID" ColumnName="pagosID" />
+          <ScalarProperty Name="serviciosID" ColumnName="serviciosID" />
+          <ScalarProperty Name="fechapago" ColumnName="fechapago" />
+          <ScalarProperty Name="montopago" ColumnName="montopago" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Publicidad">
+      <EntityTypeMapping TypeName="PymesFinderModel.Publicidad">
+        <MappingFragment StoreEntitySet="Publicidad">
+          <ScalarProperty Name="publicidadID" ColumnName="publicidadID" />
+          <ScalarProperty Name="tipopublicidadID" ColumnName="tipopublicidadID" />
+          <ScalarProperty Name="pymesID" ColumnName="pymesID" />
+          <ScalarProperty Name="codigopublicidad" ColumnName="codigopublicidad" />
+          <ScalarProperty Name="nombrepublicidad" ColumnName="nombrepublicidad" />
+          <ScalarProperty Name="fechaagregado" ColumnName="fechaagregado" />
+          <ScalarProperty Name="fechamodificado" ColumnName="fechamodificado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pymes">
+      <EntityTypeMapping TypeName="PymesFinderModel.Pymes">
+        <MappingFragment StoreEntitySet="Pymes">
+          <ScalarProperty Name="pymesID" ColumnName="pymesID" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="usuarioID" ColumnName="usuarioID" />
+          <ScalarProperty Name="calle" ColumnName="calle" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="foto" ColumnName="foto" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="denominacion" ColumnName="denominacion" />
+          <ScalarProperty Name="posicionx" ColumnName="posicionx" />
+          <ScalarProperty Name="posiciony" ColumnName="posiciony" />
+          <ScalarProperty Name="fechaagregado" ColumnName="fechaagregado" />
+          <ScalarProperty Name="fechamodificado" ColumnName="fechamodificado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Servicios">
+      <EntityTypeMapping TypeName="PymesFinderModel.Servicios">
+        <MappingFragment StoreEntitySet="Servicios">
+          <ScalarProperty Name="serviciosID" ColumnName="serviciosID" />
+          <ScalarProperty Name="tiposervicioID" ColumnName="tiposervicioID" />
+          <ScalarProperty Name="pymesID" ColumnName="pymesID" />
+          <ScalarProperty Name="estatusID" ColumnName="estatusID" />
+          <ScalarProperty Name="fechaagregado" ColumnName="fechaagregado" />
+          <ScalarProperty Name="fechamodificado" ColumnName="fechamodificado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Subdominios">
+      <EntityTypeMapping TypeName="PymesFinderModel.Subdominios">
+        <MappingFragment StoreEntitySet="Subdominios">
+          <ScalarProperty Name="subdominiosID" ColumnName="subdominiosID" />
+          <ScalarProperty Name="pymesID" ColumnName="pymesID" />
+          <ScalarProperty Name="estatusID" ColumnName="estatusID" />
+          <ScalarProperty Name="url" ColumnName="url" />
+          <ScalarProperty Name="fechaagregado" ColumnName="fechaagregado" />
+          <ScalarProperty Name="fechamodificado" ColumnName="fechamodificado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoPublicidad">
+      <EntityTypeMapping TypeName="PymesFinderModel.TipoPublicidad">
+        <MappingFragment StoreEntitySet="TipoPublicidad">
+          <ScalarProperty Name="tipopublicidadID" ColumnName="tipopublicidadID" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="fechaagregado" ColumnName="fechaagregado" />
+          <ScalarProperty Name="fechamodificado" ColumnName="fechamodificado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoServicio">
+      <EntityTypeMapping TypeName="PymesFinderModel.TipoServicio">
+        <MappingFragment StoreEntitySet="TipoServicio">
+          <ScalarProperty Name="tiposervicioID" ColumnName="tiposervicioID" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="fechaagregado" ColumnName="fechaagregado" />
+          <ScalarProperty Name="fechamodificado" ColumnName="fechamodificado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoUsuario">
+      <EntityTypeMapping TypeName="PymesFinderModel.TipoUsuario">
+        <MappingFragment StoreEntitySet="TipoUsuario">
+          <ScalarProperty Name="tipousuarioID" ColumnName="tipousuarioID" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="fechaagregado" ColumnName="fechaagregado" />
+          <ScalarProperty Name="fechamodificado" ColumnName="fechamodificado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="PymesFinderModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="usuarioID" ColumnName="usuarioID" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellidopaterno" ColumnName="apellidopaterno" />
+          <ScalarProperty Name="apellidomaterno" ColumnName="apellidomaterno" />
+          <ScalarProperty Name="calle" ColumnName="calle" />
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="codigopostal" ColumnName="codigopostal" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="cuenta" ColumnName="cuenta" />
+          <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+          <ScalarProperty Name="correo" ColumnName="correo" />
+          <ScalarProperty Name="fechaagregado" ColumnName="fechaagregado" />
+          <ScalarProperty Name="fechamodificado" ColumnName="fechamodificado" />
+          <ScalarProperty Name="tipousuarioID" ColumnName="tipousuarioID" />
+          <ScalarProperty Name="estatusID" ColumnName="estatusID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

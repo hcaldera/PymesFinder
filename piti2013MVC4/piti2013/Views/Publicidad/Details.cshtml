@@ -1,0 +1,57 @@
+﻿@model piti2013.Models.Publicidad
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Publicidad</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TipoPublicidad.descripcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TipoPublicidad.descripcion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Pymes.nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Pymes.nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.codigopublicidad)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.codigopublicidad)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nombrepublicidad)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nombrepublicidad)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fechaagregado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaagregado)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fechamodificado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechamodificado)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.publicidadID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

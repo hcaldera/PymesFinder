@@ -1,0 +1,111 @@
+﻿@model IEnumerable<piti2013.Models.Usuario>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.apellidopaterno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.apellidomaterno)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.calle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.codigopostal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cuenta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.contrasena)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.correo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechaagregado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fechamodificado)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TipoUsuario.descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estatus.descripcion)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apellidopaterno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.apellidomaterno)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.calle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.codigopostal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telefono)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cuenta)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.contrasena)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.correo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechaagregado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fechamodificado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoUsuario.descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estatus.descripcion)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.usuarioID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.usuarioID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.usuarioID })
+        </td>
+    </tr>
+}
+
+</table>

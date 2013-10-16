@@ -1,0 +1,36 @@
+﻿@model piti2013.Models.Pagos
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Pagos</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Servicios.serviciosID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Servicios.serviciosID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fechapago)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechapago)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.montopago)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.montopago)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.pagosID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,92 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+        <meta charset="utf-8">
+            <title>Untitled Document</title>
+            <link href="../Content/mainStyle.css"
+                   rel="stylesheet"/>
+            <link href="../Content/jquery-ui.css"
+            	  rel="stylesheet" />
+            <script src="../Scripts/funciones.js"
+                    type="text/javascript"></script>
+			<script src="../Scripts/jquery.js"
+                    type="text/javascript"></script>
+			<script src="../Scripts/jquery-ui.js"
+                    type="text/javascript"></script>    
+    </head>
+    
+    <body >
+    	<input onclick="cuadCircLinea('rectangulo')"
+        	   type="button" 
+               value="cuadro"/>
+        <input onclick="cuadCircLinea('circulo')"
+        	   type="button" 
+               value="circulo"/>
+        <input onClick="cuadCircLinea('linea')"
+        	   type="button" 
+               value="linea"/>
+    	<div id="contenedor" oncontextmenu="return false;" >
+        	<div id="canvas"></div>
+        </div>
+        <input onChange="cargaImagen(event)"
+        	   id="btnSubirImagen" 
+               type="file"/>
+        <input id="btnColor"
+               type="color"/>
+        <input onClick="rellenoFigura()"
+        	   type="button"
+               value="Cambiar color de figura"/>
+        <input onClick="rellenoFondo()"
+        	   type="button"
+               value="Cambiar color de fondo"/>
+        <input onChange="cargaImagenFondo(event)"
+        	   type="file"/>
+        <br/>
+        <input onclick="Eliminar()"
+               type="button"
+               value="Borrar figura"/>
+        <input onclick="InsertarCajaDeTexto()"
+               type="button"
+               value="Texto"/>
+        <select id="letra">
+        	<option>Arial</option>
+            <option>Arial Black</option>
+            <option>Comic Sans MS</option>
+            <option>Courier New</option>
+            <option>Georgia</option>
+            <option>Lucida console</option>
+            <option>Lucida Sans Unicode</option>
+            <option>Palatino Linotype</option>
+            <option>Tahoma</option>
+            <option>Times New Roman</option>
+            <option>Trebuchet MS</option>         
+            <option>Verdana</option>
+        </select>
+        <input onClick="cambiarLetra()"
+               type="button"
+               value="Cambiarletra"/>
+        <label id="etiqueta">19</label>
+        <input id="rango" type="range" min="10" max="80" onChange="rangoTamañoLetra()" value="19"/>
+        <input onClick="tamañoLetra()"
+               type="button"
+               value="cambiar tamaño de letra"/>
+        <input onClick="colorLetra()"
+               type="button"
+               value="cambiar color de letra"/>
+        
+        <select id="tamañoContenedor">
+        	<option value="0">Tarjeta</option>
+            <option value="1">Volante</option>
+            <option value="2">Poster</option>
+        </select>
+        <input onClick="tamañoPublicidad()"
+               type="button"
+               value="cambiar tamaño de contenedor"/>
+        <input type="button" value="Print Div" onclick="imprimir()" />
+        <input type="button" value="color" onClick="colorBorde()"/>
+        <input type="number" id="frenteAtras" min="10" max="30" value="20" onChange="enfrenteAtras(this)"/>
+        
+   <br />
+
+    </body>
+</html>

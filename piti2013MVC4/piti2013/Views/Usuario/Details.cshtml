@@ -1,0 +1,113 @@
+﻿@model piti2013.Models.Usuario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Usuario</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.nombre)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.nombre)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.apellidopaterno)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.apellidopaterno)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.apellidomaterno)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.apellidomaterno)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.calle)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.calle)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.numero)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.numero)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.codigopostal)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.codigopostal)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.telefono)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.telefono)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cuenta)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cuenta)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.contrasena)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.contrasena)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.correo)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.correo)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fechaagregado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechaagregado)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.fechamodificado)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.fechamodificado)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TipoUsuario.descripcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TipoUsuario.descripcion)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Estatus.descripcion)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Estatus.descripcion)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.usuarioID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

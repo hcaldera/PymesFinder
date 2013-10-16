@@ -1,0 +1,53 @@
+﻿@model piti2013.Models.TipoServicio
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>TipoServicio</legend>
+
+        @Html.HiddenFor(model => model.tiposervicioID)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.descripcion)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.descripcion)
+            @Html.ValidationMessageFor(model => model.descripcion)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.fechaagregado)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.fechaagregado)
+            @Html.ValidationMessageFor(model => model.fechaagregado)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.fechamodificado)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.fechamodificado)
+            @Html.ValidationMessageFor(model => model.fechamodificado)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
